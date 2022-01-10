@@ -7,7 +7,7 @@
     "url": "git+https://github.com/ehdcks3421/wetube-reloaded.git"
   },
   "scripts": {
-    "dev": "nodemon --exec npx babel-node index.js"
+    "dev": "nodemon --exec npx babel-node src/server.js"
   },
   "author": "",
   "license": "MIT",
@@ -16,7 +16,8 @@
   },
   "homepage": "https://github.com/ehdcks3421/wetube-reloaded#readme",
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
