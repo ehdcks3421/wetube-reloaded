@@ -1,15 +1,14 @@
 import express from "express";
-import { all } from "express/lib/application";
+import all from "express/lib/application.js";
 import {
   postEdit,
   getEdit,
   watch,
-  upload,
   deleteVideo,
   getUpload,
   postUpload,
-} from "../controllers/videoController";
-import { protectMiddleware, videoUpload } from "../middlewares";
+} from "../controllers/videoController.js";
+import { protectMiddleware, videoUpload } from "../middlewares.js";
 const videoRouter = express.Router();
 
 // const handleWatch = (req, res) => res.send("Watch Video");

@@ -1,6 +1,6 @@
-import req from "express/lib/request";
-import Video from "../models/Video";
-import User from "../models/User";
+//import req from "express/lib/request";
+import Video from "../models/Video.js";
+import User from "../models/User.js";
 
 export const home = async (req, res) => {
   //promise
