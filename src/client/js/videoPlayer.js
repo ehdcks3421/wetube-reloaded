@@ -12,6 +12,8 @@ const fullScreenIcon = fullScreen.querySelector("i");
 const videoContainer = document.getElementById("videoContainer");
 const videoControls = document.getElementById("videoControls");
 
+console.log(videoContainer.dataset);
+
 let controlsTimeout = null;
 let controlsMovementTimeout = null;
 let volumeValue = 0.5;
@@ -110,11 +112,19 @@ const handleMouseLeave = () => {
   controlsTimeout = setTimeout(hideControls, 3000);
 };
 
+const handleEnded = () => {
+  const { id } = videoContainer.dataset;
+  fetch(`/api/videos/${id}/view`, {
+    method: "POST",
+  });
+};
+
 playBtn.addEventListener("click", handlePlayClick);
 muteBtn.addEventListener("click", handleMuteClick);
 volumeRange.addEventListener("input", handleVolumeChange);
 video.addEventListener("loadedmetadata", handleLoadedMetadata);
 video.addEventListener("timeupdate", handleTimeUpdate); //비디오 시간이 변경되는 걸 감지
+video.addEventListener("ended", handleEnded);
 timeline.addEventListener("input", handleTimelineChange);
 fullScreen.addEventListener("click", handleFullScreen);
 video.addEventListener("mousemove", handleMouseMove);
