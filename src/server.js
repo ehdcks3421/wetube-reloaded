@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 });
 app.use(logger);
 app.use(express.urlencoded({ extended: true })); //form 데이터를 들고오는 역할
-
+app.use(express.json()); //string을 받으면 json으로 바꾼다.
 app.use(
   //사이트로 들어오는 모두를 기억!
   session({
